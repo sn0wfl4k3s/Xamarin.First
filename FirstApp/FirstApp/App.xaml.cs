@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using FirstApp.Views;
 
 namespace FirstApp
 {

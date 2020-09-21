@@ -1,7 +1,7 @@
 ﻿using FirstApp.ViewModel;
 using Xamarin.Forms;
 
-namespace FirstApp
+namespace FirstApp.Views
 {
     public partial class MainPage : ContentPage
     {
