@@ -3,20 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstApp.Views.MainPage">
 
-    <StackLayout>
+    <StackLayout Orientation="Vertical">
 
         <Frame BackgroundColor="#2196F3" Padding="6" CornerRadius="0">
             <Label Text="NoteApp" HorizontalTextAlignment="Center" TextColor="White" FontSize="Title"/>
         </Frame>
         
-        <Button Text="Criar nova nota" CornerRadius="30" Margin="30,5,30,10" />
+        <Button Text="Criar nova nota" CornerRadius="30" Margin="30,5,30,10"  />
 
         <Frame>
             <Label Text="Últimas Notas:" FontSize="Large" />
         </Frame>
-        
-        
-        
+
+
+        <ListView ItemsSource="{Binding Notes}" Margin="20,0,20,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Title}" Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         
         
         
