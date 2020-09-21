@@ -8,22 +8,20 @@ using Xamarin.Forms;
 
 namespace FirstApp.ViewModel
 {
-    public class MainViewModel
+    public class MainViewModel : BaseViewModel
     {
-        private readonly IDataStore<Note> _dataStore;
-
-        public ObservableCollection<Note> Notes { get; set; }
         public ICommand OpenCreateNotePageCommand { get; private set; }
+        
+        public ObservableCollection<Note> Notes { get; set; }
 
         public MainViewModel()
         {
-            _dataStore = DependencyService.Get<IDataStore<Note>>();
-
             Notes = _dataStore.GetAllEntities();
 
             OpenCreateNotePageCommand = new Command(OpenCreateNotePageCmd);
         }
 
+        
         private async void OpenCreateNotePageCmd()
         {
             await Application.Current.MainPage.Navigation.PushAsync(new CreateNotePage());

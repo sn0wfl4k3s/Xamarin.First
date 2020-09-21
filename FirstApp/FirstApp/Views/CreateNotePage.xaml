@@ -5,9 +5,10 @@
              Title="Criar Nota">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Criar Nota"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Criar Nota" />
+            <Editor Text="{Binding NewNote.Title, Mode=TwoWay}" Placeholder="Title"/>
+            <Editor Text="{Binding NewNote.Description, Mode=TwoWay}" Placeholder="Description"/>
+            <Button Text="Salvar" Command="{Binding SaveNewNoteCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
