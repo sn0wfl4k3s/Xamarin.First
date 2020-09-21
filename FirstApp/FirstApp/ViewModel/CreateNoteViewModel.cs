@@ -1,6 +1,6 @@
 ﻿namespace FirstApp.ViewModel
 {
-    public class CreateNotePageViewModel
+    public class CreateNoteViewModel
     {
     }
 }

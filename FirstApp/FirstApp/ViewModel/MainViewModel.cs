@@ -8,14 +8,14 @@ using Xamarin.Forms;
 
 namespace FirstApp.ViewModel
 {
-    public class MainPageViewModel
+    public class MainViewModel
     {
         private readonly IDataStore<Note> _dataStore;
 
         public ObservableCollection<Note> Notes { get; set; }
         public ICommand OpenCreateNotePageCommand { get; private set; }
 
-        public MainPageViewModel()
+        public MainViewModel()
         {
             _dataStore = DependencyService.Get<IDataStore<Note>>();
 

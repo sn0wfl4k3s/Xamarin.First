@@ -11,7 +11,7 @@ namespace FirstApp.Views
         public CreateNotePage()
         {
             InitializeComponent();
-            BindingContext = new CreateNotePageViewModel();
+            BindingContext = new CreateNoteViewModel();
         }
     }
 }

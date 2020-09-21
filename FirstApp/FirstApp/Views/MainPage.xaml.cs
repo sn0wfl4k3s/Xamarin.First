@@ -8,7 +8,7 @@ namespace FirstApp.Views
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainPageViewModel();
+            BindingContext = new MainViewModel();
         }
     }
 }
