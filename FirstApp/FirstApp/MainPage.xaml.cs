@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FirstApp.ViewModel;
 using Xamarin.Forms;
 
 namespace FirstApp
@@ -13,6 +8,7 @@ namespace FirstApp
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainPageViewModel();
         }
     }
 }
