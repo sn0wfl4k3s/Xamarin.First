@@ -1,14 +1,20 @@
 ﻿using FirstApp.Models;
+using FirstApp.Services;
 using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace FirstApp.ViewModel
 {
     public class MainPageViewModel
     {
-        public ObservableCollection<Note> Notes { get; } = new ObservableCollection<Note>
+        private readonly IDataStore<Note> _dataStore;
+
+        public ObservableCollection<Note> Notes { get; set; }
+
+        public MainPageViewModel()
         {
-            new Note { Title = "titulo 1", Description = "Description número um." },
-            new Note { Title = "titulo 2", Description = "Description número dois." },
-        };
+            _dataStore = DependencyService.Get<IDataStore<Note>>();
+            Notes = _dataStore.GetAllEntities();
+        }
     }
 }
