@@ -2,13 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstApp.Views.MainPage"
-             Title="Home">
-
+             Title="NoteApp">
     <StackLayout Orientation="Vertical">
-
-        <Frame BackgroundColor="#2196F3" Padding="6" CornerRadius="0">
-            <Label Text="NoteApp" HorizontalTextAlignment="Center" TextColor="White" FontSize="Title"/>
-        </Frame>
 
         <Button 
             Text="Criar nova nota" 
@@ -30,7 +25,5 @@
             </ListView.ItemTemplate>
         </ListView>
 
-
     </StackLayout>
-
 </ContentPage>
