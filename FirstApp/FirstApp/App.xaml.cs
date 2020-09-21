@@ -9,12 +9,11 @@ namespace FirstApp
     {
         public App()
         {
-
             DependencyService.Register<IDataStore<Note>, NoteService>();
 
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
