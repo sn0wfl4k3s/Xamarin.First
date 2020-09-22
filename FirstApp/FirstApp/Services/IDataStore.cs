@@ -8,5 +8,6 @@ namespace FirstApp.Services
         void AddEntity(T entity);
         void UpdateEntity(int id, T entity);
         void DeleteEntity(int id, T entity);
+        void DeleteEntity(T entity);
     }
 }

@@ -24,6 +24,8 @@ namespace FirstApp.Services
             throw new NotImplementedException();
         }
 
+        public void DeleteEntity(Note entity) => _notes.Remove(entity);
+
         public ObservableCollection<Note> GetAllEntities() => _notes;
 
         public void UpdateEntity(int id, Note entity)
