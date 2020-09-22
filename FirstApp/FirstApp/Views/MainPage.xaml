@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:FirstApp.Models"
              x:Class="FirstApp.Views.MainPage"
              Title="NoteApp">
     <StackLayout Orientation="Vertical">
@@ -17,10 +17,17 @@
         </Frame>
 
 
-        <ListView ItemsSource="{Binding Notes}" Margin="20,0,20,0">
+        <ListView 
+            ItemsSource="{Binding Notes}"
+            HasUnevenRows="True">
             <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Title}" Detail="{Binding Description}" />
+                <DataTemplate x:DataType="local:Note">
+                    <ViewCell>
+                        <StackLayout Padding="5,0,0,8">
+                            <Label Text="{Binding Title}" FontSize="Large" />
+                            <Label Text="{Binding Description}" FontSize="Medium" />
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

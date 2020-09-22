@@ -6,23 +6,14 @@ namespace FirstApp.ViewModel
 {
     public class CreateNoteViewModel : BaseViewModel
     {
-        public Note NewNote { get; set; }
-        public ICommand SaveNewNoteCommand { get; set; }
+        public Note NewNote { get; set; } = new();
+        public ICommand SaveNewNoteCommand  => new Command(SaveNewNoteCmd);
 
-        public CreateNoteViewModel ()
-        {
-            NewNote = new Note
-            {
-                Title = string.Empty,
-                Description = string.Empty
-            };
 
-            SaveNewNoteCommand = new Command(SaveNewNoteCmd);
-        }
-
-        async void SaveNewNoteCmd ()
+        private async void SaveNewNoteCmd()
         {
             _dataStore.AddEntity(NewNote);
+
             await Application.Current.MainPage.Navigation.PopAsync();
         }
     }

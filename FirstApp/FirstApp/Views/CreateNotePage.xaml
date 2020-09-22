@@ -4,11 +4,17 @@
              x:Class="FirstApp.Views.CreateNotePage"
              Title="Criar Nota">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Criar Nota" />
-            <Editor Text="{Binding NewNote.Title, Mode=TwoWay}" Placeholder="Title"/>
-            <Editor Text="{Binding NewNote.Description, Mode=TwoWay}" Placeholder="Description"/>
-            <Button Text="Salvar" Command="{Binding SaveNewNoteCommand}"/>
+        <StackLayout Margin="10,0,10,0">
+            <Label Text="Criar Nota" FontSize="Title" Margin="5,10,0,5"/>
+            <Editor Text="{Binding NewNote.Title, Mode=TwoWay}" Placeholder="Title" Margin="5"/>
+            <Editor Text="{Binding NewNote.Description, Mode=TwoWay}" Placeholder="Description" Margin="5"/>
+            <Button 
+                Text="Salvar" 
+                Command="{Binding SaveNewNoteCommand}" 
+                Margin="0,35,0,5" 
+                CornerRadius="20" 
+                HorizontalOptions="Fill"
+                VerticalOptions="End"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
