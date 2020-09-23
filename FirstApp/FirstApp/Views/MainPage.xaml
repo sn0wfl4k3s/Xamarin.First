@@ -23,7 +23,7 @@
             ItemsSource="{Binding Notes}"
             HasUnevenRows="True"
             CachingStrategy="RecycleElement"
-            SelectionMode="Single">
+            SelectionMode="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
