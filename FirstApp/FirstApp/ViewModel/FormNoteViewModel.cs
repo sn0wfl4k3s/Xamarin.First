@@ -1,5 +1,6 @@
 ﻿using FirstApp.Models;
 using System.Windows.Input;
+
 using Xamarin.Forms;
 
 namespace FirstApp.ViewModel
@@ -26,10 +27,11 @@ namespace FirstApp.ViewModel
         {
             if (IsEdit)
             {
-                _dataStore.AddEntity(NewNote);
+                _dataStore.UpdateEntity(NewNote.Id, NewNote);
             }
             else
             {
+                NewNote.Id = _dataStore.GetAllEntities().Count + 1;
                 _dataStore.AddEntity(NewNote);
             }
 

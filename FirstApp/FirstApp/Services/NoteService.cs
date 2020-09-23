@@ -1,6 +1,7 @@
 ﻿using FirstApp.Models;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace FirstApp.Services
 {
@@ -12,8 +13,8 @@ namespace FirstApp.Services
         {
             _notes = new ObservableCollection<Note>
             {
-                new Note { Title = "titulo 1", Description = "Description número um." },
-                new Note { Title = "titulo 2", Description = "Description número dois." }
+                new Note { Id = 1, Title = "titulo 1", Description = "Description número um." },
+                new Note { Id = 2, Title = "titulo 2", Description = "Description número dois." }
             };
         }
 
@@ -30,7 +31,9 @@ namespace FirstApp.Services
 
         public void UpdateEntity(int id, Note entity)
         {
-            throw new NotImplementedException();
+            var index = _notes.IndexOf(_notes.First(n => n.Id == id));
+            _notes.RemoveAt(index);
+            _notes.Insert(index, entity);
         }
     }
 }
