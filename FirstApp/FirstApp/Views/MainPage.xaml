@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:FirstApp.Models"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstApp.Views.MainPage"
+             x:Name="this"
              Title="NoteApp">
     <StackLayout Orientation="Vertical">
 
@@ -17,15 +18,26 @@
         </Frame>
 
 
-        <ListView 
+        <ListView
+            x:Name="myListView"
             ItemsSource="{Binding Notes}"
-            HasUnevenRows="True">
+            HasUnevenRows="True"
+            CachingStrategy="RecycleElement"
+            SelectionMode="Single">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="local:Note">
+                <DataTemplate>
                     <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem 
+                                Text="Deletar"
+                                Command="{Binding Source={x:Reference this}, Path=BindingContext.DeleteNoteCommand}"
+                                CommandParameter="{Binding .}"
+                                IsDestructive="True"
+                                />
+                        </ViewCell.ContextActions>
                         <StackLayout Padding="5,0,0,8">
-                            <Label Text="{Binding Title}" FontSize="Large" />
-                            <Label Text="{Binding Description}" FontSize="Medium" />
+                            <Label Text="{Binding Title, Mode=TwoWay}" FontSize="Large" />
+                            <Label Text="{Binding Description, Mode=TwoWay}" FontSize="Medium" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
