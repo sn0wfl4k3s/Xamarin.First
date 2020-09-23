@@ -11,7 +11,7 @@ namespace FirstApp.Services
 
         public NoteService()
         {
-            _notes = new ObservableCollection<Note>
+            _notes = new ()
             {
                 new Note { Id = 1, Title = "titulo 1", Description = "Description número um." },
                 new Note { Id = 2, Title = "titulo 2", Description = "Description número dois." }

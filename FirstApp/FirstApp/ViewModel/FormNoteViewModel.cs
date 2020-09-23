@@ -32,6 +32,7 @@ namespace FirstApp.ViewModel
             else
             {
                 NewNote.Id = _dataStore.GetAllEntities().Count + 1;
+
                 _dataStore.AddEntity(NewNote);
             }
 
