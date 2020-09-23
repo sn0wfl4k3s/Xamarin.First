@@ -7,18 +7,18 @@ using Xamarin.Forms.Xaml;
 namespace FirstApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CreateNotePage : ContentPage
+    public partial class FormNotePage : ContentPage
     {
-        public CreateNotePage()
+        public FormNotePage()
         {
             InitializeComponent();
-            BindingContext = new CreateNoteViewModel();
+            BindingContext = new FormNoteViewModel();
         }
 
-        public CreateNotePage(Note note)
+        public FormNotePage(Note note)
         {
             InitializeComponent();
-            BindingContext = new CreateNoteViewModel(note);
+            BindingContext = new FormNoteViewModel(note);
         }
     }
 }

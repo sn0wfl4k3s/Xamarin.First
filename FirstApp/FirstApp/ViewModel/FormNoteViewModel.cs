@@ -4,19 +4,19 @@ using Xamarin.Forms;
 
 namespace FirstApp.ViewModel
 {
-    public class CreateNoteViewModel : BaseViewModel
+    public class FormNoteViewModel : BaseViewModel
     {
         public bool IsEdit { get; private set; }
         public Note NewNote { get; set; }
         public ICommand SaveNewNoteCommand => new Command(SaveNewNoteCmd);
 
-        public CreateNoteViewModel()
+        public FormNoteViewModel()
         {
             NewNote = new();
             IsEdit = false;
         }
 
-        public CreateNoteViewModel(Note newNote)
+        public FormNoteViewModel(Note newNote)
         {
             NewNote = newNote;
             IsEdit = true;
@@ -24,7 +24,7 @@ namespace FirstApp.ViewModel
 
         private async void SaveNewNoteCmd()
         {
-            if (!IsEdit)
+            if (IsEdit)
             {
                 _dataStore.AddEntity(NewNote);
             }

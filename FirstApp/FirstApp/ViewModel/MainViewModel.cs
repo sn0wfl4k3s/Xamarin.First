@@ -28,12 +28,12 @@ namespace FirstApp.ViewModel
 
         async void OpenCreateNotePageCmd()
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new CreateNotePage());
+            await Application.Current.MainPage.Navigation.PushAsync(new FormNotePage());
         }
 
         async void EditNoteCmd(Note note)
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new CreateNotePage(note));
+            await Application.Current.MainPage.Navigation.PushAsync(new FormNotePage(note));
         }
 
     }
