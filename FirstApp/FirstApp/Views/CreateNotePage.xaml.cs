@@ -1,4 +1,5 @@
-﻿using FirstApp.ViewModel;
+﻿using FirstApp.Models;
+using FirstApp.ViewModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,6 +13,12 @@ namespace FirstApp.Views
         {
             InitializeComponent();
             BindingContext = new CreateNoteViewModel();
+        }
+
+        public CreateNotePage(Note note)
+        {
+            InitializeComponent();
+            BindingContext = new CreateNoteViewModel(note);
         }
     }
 }

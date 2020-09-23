@@ -13,6 +13,7 @@ namespace FirstApp.ViewModel
 
         public ICommand OpenCreateNotePageCommand => new Command(OpenCreateNotePageCmd);
         public ICommand DeleteNoteCommand => new Command<Note>(DeleteNoteCmd);
+        public ICommand EditNoteCommand => new Command<Note>(EditNoteCmd);
 
 
         public MainViewModel()
@@ -20,14 +21,20 @@ namespace FirstApp.ViewModel
             Notes = _dataStore.GetAllEntities();
         }
 
-        private void DeleteNoteCmd(Note note)
+        void DeleteNoteCmd(Note note)
         {
             _dataStore.DeleteEntity(note);
         }
 
-        private async void OpenCreateNotePageCmd()
+        async void OpenCreateNotePageCmd()
         {
             await Application.Current.MainPage.Navigation.PushAsync(new CreateNotePage());
         }
+
+        async void EditNoteCmd(Note note)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new CreateNotePage(note));
+        }
+
     }
 }

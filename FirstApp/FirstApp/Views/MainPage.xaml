@@ -29,6 +29,11 @@
                     <ViewCell>
                         <ViewCell.ContextActions>
                             <MenuItem 
+                                Text="Editar"
+                                Command="{Binding Source={x:Reference this}, Path=BindingContext.EditNoteCommand}"
+                                CommandParameter="{Binding .}"
+                                />
+                            <MenuItem 
                                 Text="Deletar"
                                 Command="{Binding Source={x:Reference this}, Path=BindingContext.DeleteNoteCommand}"
                                 CommandParameter="{Binding .}"
