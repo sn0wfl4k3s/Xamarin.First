@@ -56,7 +56,6 @@
                                     </OnPlatform>
                                 </Label.FontSize>
                             </Label>
-
                             <Label Text="{Binding Description}" >
                                 <Label.FontSize>
                                     <OnPlatform x:TypeArguments="x:Double">

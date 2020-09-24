@@ -9,7 +9,7 @@ namespace FirstApp.ViewModel
     {
         public bool IsEdit { get; private set; }
         public Note NewNote { get; set; }
-        public ICommand SaveNewNoteCommand => new Command(SaveNewNoteCmd);
+        public ICommand SaveNoteCommand => new Command(SaveNoteCmd);
 
         public FormNoteViewModel()
         {
@@ -23,7 +23,7 @@ namespace FirstApp.ViewModel
             IsEdit = true;
         }
 
-        private async void SaveNewNoteCmd()
+        async void SaveNoteCmd()
         {
             if (IsEdit)
             {
