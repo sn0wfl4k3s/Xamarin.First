@@ -13,6 +13,7 @@ namespace FirstApp.ViewModel
         public Note Note { get; set; }
 
         public ICommand SaveNoteCommand => new Command(SaveNoteCmd);
+        public ICommand CancelCommand => new Command(BackToMainPage);
 
         public FormNoteViewModel()
         {
@@ -26,7 +27,7 @@ namespace FirstApp.ViewModel
             IsEdit = true;
         }
 
-        async void SaveNoteCmd()
+        void SaveNoteCmd()
         {
             if (IsEdit)
             {
@@ -37,6 +38,11 @@ namespace FirstApp.ViewModel
                 _dataStore.AddEntity(Note);
             }
 
+            BackToMainPage();
+        }
+
+        async void BackToMainPage()
+        {
             await Application.Current.MainPage.Navigation.PopAsync(true);
         }
     }

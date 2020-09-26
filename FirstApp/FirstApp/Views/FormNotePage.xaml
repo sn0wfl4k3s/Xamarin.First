@@ -14,14 +14,12 @@
                 <Grid.RowDefinitions>
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-
-                <!--<BoxView Color="Blue" />-->
-
+                
                 <Button
                     Grid.Column="0"
                     Text="Salvar" 
@@ -32,11 +30,10 @@
                     VerticalOptions="End"
                     />
 
-                <!--<BoxView Color="Red" Grid.Column="1" />-->
-
                 <Button
                     Grid.Column="1"
                     Text="Cancelar"
+                    Command="{Binding CancelCommand}" 
                     Margin="0,35,0,5" 
                     CornerRadius="20" 
                     HorizontalOptions="Fill"
