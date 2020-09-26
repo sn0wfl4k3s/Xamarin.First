@@ -18,7 +18,7 @@
             Text="Criar nova nota" 
             CornerRadius="30" 
             Margin="30,5,30,10" 
-            Command="{Binding OpenCreateNotePageCommand}"
+            Command="{Binding CreateNoteCommand}"
             />
 
         <Frame>

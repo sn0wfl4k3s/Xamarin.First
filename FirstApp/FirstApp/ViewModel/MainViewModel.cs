@@ -12,10 +12,10 @@ namespace FirstApp.ViewModel
     [AddINotifyPropertyChangedInterface]
     public class MainViewModel : BaseViewModel
     {
-        public bool IsEmptyList { get; set; }
         public ObservableCollection<Note> Notes { get; set; } = new ObservableCollection<Note>();
+        public bool IsEmptyList { get; set; }
 
-        public ICommand OpenCreateNotePageCommand => new Command(OpenCreateNotePageCmd);
+        public ICommand CreateNoteCommand => new Command(CreateNotePageCmd);
         public ICommand DeleteNoteCommand => new Command<Note>(DeleteNoteCmd);
         public ICommand EditNoteCommand => new Command<Note>(EditNoteCmd);
 
@@ -32,7 +32,7 @@ namespace FirstApp.ViewModel
         }
 
 
-        async void OpenCreateNotePageCmd()
+        async void CreateNotePageCmd()
         {
             await Application.Current.MainPage.Navigation.PushAsync(new FormNotePage(), true);
         }

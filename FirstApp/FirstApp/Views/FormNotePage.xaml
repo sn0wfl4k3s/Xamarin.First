@@ -6,15 +6,45 @@
     <ContentPage.Content>
         <StackLayout Margin="10,0,10,0">
             <Label Text="Criar Nota" FontSize="Title" Margin="5,10,0,5"/>
-            <Editor Text="{Binding NewNote.Title, Mode=TwoWay}" Placeholder="Title" Margin="5"/>
-            <Editor Text="{Binding NewNote.Description, Mode=TwoWay}" Placeholder="Description" Margin="5"/>
-            <Button 
-                Text="Salvar" 
-                Command="{Binding SaveNoteCommand}" 
-                Margin="0,35,0,5" 
-                CornerRadius="20" 
-                HorizontalOptions="Fill"
-                VerticalOptions="End"/>
+            <Editor Text="{Binding Note.Title, Mode=TwoWay}" Placeholder="Title" Margin="5"/>
+            <Editor Text="{Binding Note.Description, Mode=TwoWay}" Placeholder="Description" Margin="5"/>
+            
+            <Grid >
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--<BoxView Color="Blue" />-->
+
+                <Button
+                    Grid.Column="0"
+                    Text="Salvar" 
+                    Command="{Binding SaveNoteCommand}" 
+                    Margin="0,35,0,5" 
+                    CornerRadius="20" 
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    />
+
+                <!--<BoxView Color="Red" Grid.Column="1" />-->
+
+                <Button
+                    Grid.Column="1"
+                    Text="Cancelar"
+                    Margin="0,35,0,5" 
+                    CornerRadius="20" 
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    />
+
+            </Grid>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
