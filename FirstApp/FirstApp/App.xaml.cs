@@ -2,16 +2,19 @@
 using FirstApp.Views;
 using FirstApp.Services;
 using FirstApp.Models;
+using FirstApp.DataAccess;
 
 namespace FirstApp
 {
     public partial class App : Application
     {
+
+
         public App()
         {
-            DependencyService.Register<IDataStore<Note>, NoteService>();
-
             InitializeComponent();
+
+            DependencyService.Register<IDataStore<Note>, NoteService>();
 
             MainPage = new NavigationPage(new MainPage());
         }

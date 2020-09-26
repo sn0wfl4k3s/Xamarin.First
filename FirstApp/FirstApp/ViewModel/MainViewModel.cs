@@ -18,7 +18,7 @@ namespace FirstApp.ViewModel
 
         public MainViewModel()
         {
-            Notes = _dataStore.GetAllEntities();
+            Notes = new ObservableCollection<Note>(_dataStore.GetAllEntities());
         }
 
         void DeleteNoteCmd(Note note)

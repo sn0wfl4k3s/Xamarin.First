@@ -19,6 +19,8 @@ namespace FirstApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            SQLitePCL.Batteries.Init();
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
