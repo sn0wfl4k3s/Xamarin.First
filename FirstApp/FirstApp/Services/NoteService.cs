@@ -22,10 +22,7 @@ namespace FirstApp.Services
             _context.SaveChanges();
         }
 
-        public IEnumerable<Note> GetAllEntities()
-        {
-            return _context.Notes.ToList();
-        }
+        public IEnumerable<Note> GetAllEntities() => _context.Notes.ToList();
 
         public void UpdateEntity(int id, Note entity)
         {
