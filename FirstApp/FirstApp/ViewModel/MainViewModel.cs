@@ -1,11 +1,9 @@
 ﻿using FirstApp.Models;
 using FirstApp.Views;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Windows.Input;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Internals;
 
 namespace FirstApp.ViewModel
 {
@@ -40,7 +38,7 @@ namespace FirstApp.ViewModel
             await Application.Current.MainPage.Navigation.PushAsync(new FormNotePage(note), true);
         }
 
-        void Syncronize ()
+        void Syncronize()
         {
             Notes.Clear();
 
