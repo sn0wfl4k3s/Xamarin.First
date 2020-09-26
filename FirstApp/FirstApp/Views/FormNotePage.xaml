@@ -1,13 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:FirstApp.Behaviors"
              x:Class="FirstApp.Views.FormNotePage"
              Title="Criar Nota">
     <ContentPage.Content>
         <StackLayout Margin="10,0,10,0">
             <Label Text="Criar Nota" FontSize="Title" Margin="5,10,0,5"/>
-            <Editor Text="{Binding Note.Title, Mode=TwoWay}" Placeholder="Title" Margin="5"/>
-            <Editor Text="{Binding Note.Description, Mode=TwoWay}" Placeholder="Description" Margin="5"/>
+            <Entry Text="{Binding Note.Title, Mode=TwoWay}" Placeholder="Title" Margin="5">
+                <Entry.Behaviors>
+                    <local:NumericValidationBehavior/>
+                </Entry.Behaviors>
+            </Entry>
+            <Entry Text="{Binding Note.Description, Mode=TwoWay}" Placeholder="Description" Margin="5"/>
             
             <Grid >
                 
