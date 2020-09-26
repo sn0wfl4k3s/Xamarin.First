@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace FirstApp.ViewModel
 {
@@ -42,10 +43,9 @@ namespace FirstApp.ViewModel
         {
             Notes.Clear();
 
-            foreach (var item in new ObservableCollection<Note>(_dataStore.GetAllEntities()))
-            {
-                Notes.Add(item);
-            }
+            _dataStore
+                .GetAllEntities()
+                .ForEach(n => Notes.Add(n));
         }
     }
 }
