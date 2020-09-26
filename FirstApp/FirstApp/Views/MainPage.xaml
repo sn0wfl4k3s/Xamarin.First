@@ -18,13 +18,18 @@
             Text="Criar nova nota" 
             CornerRadius="30" 
             Margin="30,5,30,10" 
-            Command="{Binding OpenCreateNotePageCommand}"
+            Command="{Binding CreateNoteCommand}"
             />
 
         <Frame>
             <Label Text="Últimas Notas:" FontSize="Large" />
         </Frame>
 
+        <Label
+            Text="Nenhuma nota aqui... :/"
+            IsVisible="{Binding IsEmptyList}"
+            FontSize="Medium"
+            />
 
         <ListView
             ItemsSource="{Binding Notes}"

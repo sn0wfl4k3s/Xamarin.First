@@ -1,42 +1,49 @@
 ﻿using FirstApp.Models;
+using PropertyChanged;
 using System.Windows.Input;
 
 using Xamarin.Forms;
 
 namespace FirstApp.ViewModel
 {
+    [AddINotifyPropertyChangedInterface]
     public class FormNoteViewModel : BaseViewModel
     {
         public bool IsEdit { get; private set; }
-        public Note NewNote { get; set; }
+        public Note Note { get; set; }
+
         public ICommand SaveNoteCommand => new Command(SaveNoteCmd);
+        public ICommand CancelCommand => new Command(BackToMainPage);
 
         public FormNoteViewModel()
         {
-            NewNote = new();
+            Note = new();
             IsEdit = false;
         }
 
-        public FormNoteViewModel(Note newNote)
+        public FormNoteViewModel(Note note)
         {
-            NewNote = newNote;
+            Note = note;
             IsEdit = true;
         }
 
-        async void SaveNoteCmd()
+        void SaveNoteCmd()
         {
             if (IsEdit)
             {
-                _dataStore.UpdateEntity(NewNote.Id, NewNote);
+                _dataStore.UpdateEntity(Note.Id, Note);
             }
             else
             {
-                NewNote.Id = _dataStore.GetAllEntities().Count + 1;
-
-                _dataStore.AddEntity(NewNote);
+                _dataStore.AddEntity(Note);
             }
 
-            await Application.Current.MainPage.Navigation.PopAsync();
+            BackToMainPage();
+        }
+
+        async void BackToMainPage()
+        {
+            await Application.Current.MainPage.Navigation.PopAsync(true);
         }
     }
 }

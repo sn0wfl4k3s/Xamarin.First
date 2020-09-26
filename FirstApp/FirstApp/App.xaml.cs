@@ -1,7 +1,8 @@
-﻿using Xamarin.Forms;
-using FirstApp.Views;
-using FirstApp.Services;
+﻿using FirstApp.Contracts;
 using FirstApp.Models;
+using FirstApp.Services;
+using FirstApp.Views;
+using Xamarin.Forms;
 
 namespace FirstApp
 {
@@ -9,9 +10,9 @@ namespace FirstApp
     {
         public App()
         {
-            DependencyService.Register<IDataStore<Note>, NoteService>();
-
             InitializeComponent();
+
+            DependencyService.Register<IDataStore<Note>, NoteService>();
 
             MainPage = new NavigationPage(new MainPage());
         }

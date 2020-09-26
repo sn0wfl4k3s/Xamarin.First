@@ -1,5 +1,5 @@
-﻿using FirstApp.Models;
-using FirstApp.Services;
+﻿using FirstApp.Contracts;
+using FirstApp.Models;
 
 using Xamarin.Forms;
 
