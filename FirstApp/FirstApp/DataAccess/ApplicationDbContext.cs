@@ -7,7 +7,7 @@ namespace FirstApp.DataAccess
 {
     public class ApplicationDbContext : DbContext
     {
-        private readonly string dbFilename = "banco1.db";
+        private readonly string dbFilename = "banco.db";
 
         public virtual DbSet<Note> Notes { get; set; }
 
@@ -18,9 +18,9 @@ namespace FirstApp.DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var fileHelper = DependencyService.Get<IFileHelper>();
+            var helper = DependencyService.Get<IFileHelper>();
 
-            string connection = string.Format("Filename={0}", fileHelper.GetLocalFilePath(dbFilename));
+            string connection = string.Format("Filename={0}", helper.GetLocalFilePath(dbFilename));
 
             optionsBuilder.UseSqlite(connection);
         }
