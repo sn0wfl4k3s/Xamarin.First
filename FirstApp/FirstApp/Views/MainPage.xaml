@@ -25,6 +25,11 @@
             <Label Text="Últimas Notas:" FontSize="Large" />
         </Frame>
 
+        <Label
+            Text="Nenhuma nota aqui... :/"
+            IsVisible="{Binding IsEmptyList}"
+            FontSize="Medium"
+            />
 
         <ListView
             ItemsSource="{Binding Notes}"

@@ -1,5 +1,6 @@
 ﻿using FirstApp.Models;
 using FirstApp.Views;
+using PropertyChanged;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -8,8 +9,10 @@ using Xamarin.Forms.Internals;
 
 namespace FirstApp.ViewModel
 {
+    [AddINotifyPropertyChangedInterface]
     public class MainViewModel : BaseViewModel
     {
+        public bool IsEmptyList { get; set; }
         public ObservableCollection<Note> Notes { get; set; } = new ObservableCollection<Note>();
 
         public ICommand OpenCreateNotePageCommand => new Command(OpenCreateNotePageCmd);
@@ -46,6 +49,8 @@ namespace FirstApp.ViewModel
             _dataStore
                 .GetAllEntities()
                 .ForEach(n => Notes.Add(n));
+
+            IsEmptyList = Notes.Count is 0;
         }
     }
 }
