@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FirstApp.Services
+namespace FirstApp.Contracts
 {
     public interface IDataStore<T> where T : class
     {

@@ -34,7 +34,7 @@ namespace FirstApp.ViewModel
                 _dataStore.AddEntity(NewNote);
             }
 
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await Application.Current.MainPage.Navigation.PopToRootAsync(true);
         }
     }
 }

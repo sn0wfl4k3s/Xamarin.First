@@ -1,4 +1,5 @@
-﻿using FirstApp.DataAccess;
+﻿using FirstApp.Contracts;
+using FirstApp.DataAccess;
 using FirstApp.Models;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,8 @@ namespace FirstApp.Services
 
         public void UpdateEntity(int id, Note entity)
         {
-            throw new NotImplementedException();
+            _context.Notes.Update(entity);
+            _context.SaveChanges();
         }
     }
 }

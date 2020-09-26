@@ -1,15 +1,13 @@
-﻿using Xamarin.Forms;
-using FirstApp.Views;
-using FirstApp.Services;
+﻿using FirstApp.Contracts;
 using FirstApp.Models;
-using FirstApp.DataAccess;
+using FirstApp.Services;
+using FirstApp.Views;
+using Xamarin.Forms;
 
 namespace FirstApp
 {
     public partial class App : Application
     {
-
-
         public App()
         {
             InitializeComponent();

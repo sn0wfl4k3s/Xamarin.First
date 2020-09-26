@@ -1,40 +1,53 @@
 ﻿using FirstApp.Models;
 using FirstApp.Views;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace FirstApp.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
-        public ObservableCollection<Note> Notes { get; set; }
+        public ObservableCollection<Note> Notes { get; set; } = new ObservableCollection<Note>();
 
         public ICommand OpenCreateNotePageCommand => new Command(OpenCreateNotePageCmd);
         public ICommand DeleteNoteCommand => new Command<Note>(DeleteNoteCmd);
         public ICommand EditNoteCommand => new Command<Note>(EditNoteCmd);
 
-
         public MainViewModel()
         {
-            Notes = new ObservableCollection<Note>(_dataStore.GetAllEntities());
+            Syncronize();
         }
 
         void DeleteNoteCmd(Note note)
         {
             _dataStore.DeleteEntity(note);
+
+            Syncronize();
         }
+
 
         async void OpenCreateNotePageCmd()
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new FormNotePage());
+            await Application.Current.MainPage.Navigation.PushAsync(new FormNotePage(), true);
         }
 
         async void EditNoteCmd(Note note)
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new FormNotePage(note));
+            await Application.Current.MainPage.Navigation.PushAsync(new FormNotePage(note), true);
         }
 
+        void Syncronize ()
+        {
+            Notes.Clear();
+
+            foreach (var item in new ObservableCollection<Note>(_dataStore.GetAllEntities()))
+            {
+                Notes.Add(item);
+            }
+        }
     }
 }
