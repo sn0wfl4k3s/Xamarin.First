@@ -10,7 +10,7 @@
 
             <Entry Text="{Binding Note.Title, Mode=TwoWay}" Placeholder="Title">
                 <Entry.Behaviors>
-                    <local:MaxLenValidation
+                    <local:MaxLenValidationBehavior
                         NameButtonToDisable="btnSave"
                         ErrorLabelName="maxlenLbl" 
                         ErrorMessage="Tamanho máximo é de 6 caracteres" 
