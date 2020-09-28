@@ -6,6 +6,8 @@ using System.Windows.Input;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using static Xamarin.Forms.Application;
+
 
 namespace FirstApp.ViewModel
 {
@@ -24,22 +26,28 @@ namespace FirstApp.ViewModel
             Syncronize();
         }
 
-        void DeleteNoteCmd(Note note)
+        async void DeleteNoteCmd(Note note)
         {
-            _dataStore.DeleteEntity(note);
+            bool isToDelet = await Current.MainPage
+                .DisplayAlert("Confirmar exclusão", "Tem certeza que deseja excluir a nota?", "Sim", "Não");
 
-            Syncronize();
+            if (isToDelet)
+            {
+                _dataStore.DeleteEntity(note);
+
+                Syncronize();
+            }
         }
 
 
         async void CreateNotePageCmd()
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new FormNotePage(), true);
+            await Current.MainPage.Navigation.PushAsync(new FormNotePage(), true);
         }
 
         async void EditNoteCmd(Note note)
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new FormNotePage(note), true);
+            await Current.MainPage.Navigation.PushAsync(new FormNotePage(note), true);
         }
 
         void Syncronize()

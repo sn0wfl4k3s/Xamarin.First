@@ -46,7 +46,7 @@
                                 CommandParameter="{Binding .}"
                                 />
                             <MenuItem 
-                                Text="Deletar"
+                                Text="Excluir"
                                 Command="{Binding Source={x:Reference this}, Path=BindingContext.DeleteNoteCommand}"
                                 CommandParameter="{Binding .}"
                                 IsDestructive="True"
