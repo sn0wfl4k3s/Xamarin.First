@@ -12,49 +12,39 @@
                 <Entry.Behaviors>
                     <local:MaxLenValidationBehavior
                         NameButtonToDisable="btnSave"
-                        ErrorLabelName="maxlenLbl" 
-                        ErrorMessage="Tamanho máximo é de 6 caracteres" 
+                        ErrorLabelName="maxLengthTitle"
+                        ErrorMessage="Tamanho máximo é de 50 caracteres" 
+                        Length="50"
                         />
-                    <local:NumericValidationBehavior 
+                    <local:NotNullOrEmptyValidationBehavior 
                         NameButtonToDisable="btnSave"
-                        ErrorLabelName="numericLbl"
-                        ErrorMessage="Apenas números por favor" 
+                        ErrorLabelName="notNullOrEmptyTitle"
+                        ErrorMessage="Por favor preencher o título"
                         />
                 </Entry.Behaviors>
             </Entry>
-            
-            <Label x:Name="maxlenLbl" IsVisible="False" />
-            <Label x:Name="numericLbl" IsVisible="False" />
+
+            <Label x:Name="maxLengthTitle" IsVisible="False" />
+            <Label x:Name="notNullOrEmptyTitle" IsVisible="False" />
 
 
 
-            <Entry Text="{Binding Note.Description, Mode=TwoWay}" Placeholder="Description" />
-            
-            <Grid >
-                
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                </Grid.RowDefinitions>
+            <Entry Text="{Binding Note.Description, Mode=TwoWay}" Placeholder="Description" >
+                <Entry.Behaviors>
+                    <local:NotNullOrEmptyValidationBehavior 
+                        NameButtonToDisable="btnSave"
+                        ErrorLabelName="notNullOrEmptyDescrition"
+                        ErrorMessage="Por favor preencher a descrição da nota" 
+                        />
+                </Entry.Behaviors>
+            </Entry>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                
+            <Label x:Name="notNullOrEmptyDescrition" IsVisible="False" />
+
+            <Grid>
                 <Button
-                    x:Name="btnSave"
-                    Grid.Column="1"
-                    Text="Salvar"
-                    Command="{Binding SaveNoteCommand}" 
-                    Margin="0,35,0,5" 
-                    CornerRadius="20" 
-                    HorizontalOptions="Fill"
-                    VerticalOptions="End"
-                    />
-
-                <Button
-                    x:Name="btnCancel"
                     Grid.Column="0"
+                    x:Name="btnCancel"
                     Text="Cancelar"
                     Command="{Binding CancelCommand}" 
                     Margin="0,35,0,5" 
@@ -62,9 +52,18 @@
                     HorizontalOptions="Fill"
                     VerticalOptions="End"
                     />
-
+                <Button
+                    Grid.Column="1"
+                    x:Name="btnSave"
+                    Text="Salvar"
+                    Command="{Binding SaveNoteCommand}" 
+                    Margin="0,35,0,5" 
+                    CornerRadius="20" 
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    />
             </Grid>
-            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

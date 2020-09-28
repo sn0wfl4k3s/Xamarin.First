@@ -4,6 +4,8 @@ namespace FirstApp.Behaviors
 {
     public class MaxLenValidationBehavior : FormValidationBehavior
     {
-        protected override bool IsValid(TextChangedEventArgs args) => args.NewTextValue.Length <= 6;
+        public int Length { get; set; }
+
+        protected override bool IsValid(TextChangedEventArgs args) => args.NewTextValue.Length <= Length;
     }
 }

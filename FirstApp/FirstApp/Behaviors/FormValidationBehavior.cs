@@ -5,7 +5,7 @@ namespace FirstApp.Behaviors
 {
     public abstract class FormValidationBehavior : Behavior<Entry>
     {
-        private static readonly List<string> ErrorList = new List<string>();
+        private static readonly IList<string> ErrorList = new List<string>();
 
         public string ErrorMessage { get; set; }
         public string ErrorLabelName { get; set; }
