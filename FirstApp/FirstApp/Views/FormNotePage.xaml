@@ -6,13 +6,29 @@
              Title="Criar Nota">
     <ContentPage.Content>
         <StackLayout Margin="10,0,10,0">
-            <Label Text="Criar Nota" FontSize="Title" Margin="5,10,0,5"/>
-            <Entry Text="{Binding Note.Title, Mode=TwoWay}" Placeholder="Title" Margin="5">
+            <Label Text="Criar Nota" FontSize="Title" Margin="10,10,0,5"/>
+
+            <Entry Text="{Binding Note.Title, Mode=TwoWay}" Placeholder="Title">
                 <Entry.Behaviors>
-                    <local:NumericValidationBehavior/>
+                    <local:MaxLenValidation
+                        NameButtonToDisable="btnSave"
+                        ErrorLabelName="maxlenLbl" 
+                        ErrorMessage="Tamanho máximo é de 6 caracteres" 
+                        />
+                    <local:NumericValidationBehavior 
+                        NameButtonToDisable="btnSave"
+                        ErrorLabelName="numericLbl"
+                        ErrorMessage="Apenas números por favor" 
+                        />
                 </Entry.Behaviors>
             </Entry>
-            <Entry Text="{Binding Note.Description, Mode=TwoWay}" Placeholder="Description" Margin="5"/>
+            
+            <Label x:Name="maxlenLbl" IsVisible="False" />
+            <Label x:Name="numericLbl" IsVisible="False" />
+
+
+
+            <Entry Text="{Binding Note.Description, Mode=TwoWay}" Placeholder="Description" />
             
             <Grid >
                 
@@ -26,8 +42,9 @@
                 </Grid.ColumnDefinitions>
                 
                 <Button
-                    Grid.Column="0"
-                    Text="Salvar" 
+                    x:Name="btnSave"
+                    Grid.Column="1"
+                    Text="Salvar"
                     Command="{Binding SaveNoteCommand}" 
                     Margin="0,35,0,5" 
                     CornerRadius="20" 
@@ -36,7 +53,8 @@
                     />
 
                 <Button
-                    Grid.Column="1"
+                    x:Name="btnCancel"
+                    Grid.Column="0"
                     Text="Cancelar"
                     Command="{Binding CancelCommand}" 
                     Margin="0,35,0,5" 
