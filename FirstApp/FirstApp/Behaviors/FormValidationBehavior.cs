@@ -36,14 +36,16 @@ namespace FirstApp.Behaviors
 
             errorLabel.IsVisible = !isValid;
 
-            if (!isValid && !ErrorList.Contains(ErrorMessage))
+            string key = string.Format("{0} - {1}", ErrorLabelName, ErrorMessage);
+
+            if (!isValid && !ErrorList.Contains(key))
             {
-                ErrorList.Add(ErrorMessage);
+                ErrorList.Add(key);
             }
 
-            if (isValid && ErrorList.Contains(ErrorMessage))
+            if (isValid && ErrorList.Contains(key))
             {
-                ErrorList.Remove(ErrorMessage);
+                ErrorList.Remove(key);
             }
 
             if (!isValid)

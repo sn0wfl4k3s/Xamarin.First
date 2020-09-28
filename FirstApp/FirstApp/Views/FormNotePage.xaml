@@ -6,7 +6,8 @@
              Title="Criar Nota">
     <ContentPage.Content>
         <StackLayout Margin="10,0,10,0">
-            <Label Text="Criar Nota" FontSize="Title" Margin="10,10,0,5"/>
+            
+            <Label Text="Nova Anotação" FontSize="Title" Margin="10,10,0,5"/>
 
             <Entry Text="{Binding Note.Title, Mode=TwoWay}" Placeholder="Title">
                 <Entry.Behaviors>
