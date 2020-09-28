@@ -10,7 +10,7 @@ namespace FirstApp.ViewModel
     public class FormNoteViewModel : BaseViewModel
     {
         public bool IsEdit { get; private set; }
-        public Note Note { get; set; }
+        public Note Note { get; private set; }
 
         public ICommand SaveNoteCommand => new Command(SaveNoteCmd);
         public ICommand CancelCommand => new Command(BackToMainPage);
