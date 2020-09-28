@@ -12,7 +12,7 @@ namespace FirstApp.ViewModel
     [AddINotifyPropertyChangedInterface]
     public class MainViewModel : BaseViewModel
     {
-        public ObservableCollection<Note> Notes { get; set; } = new ObservableCollection<Note>();
+        public ObservableCollection<Note> Notes { get; set; } = new();
         public bool IsEmptyList { get; set; }
 
         public ICommand CreateNoteCommand => new Command(CreateNotePageCmd);
