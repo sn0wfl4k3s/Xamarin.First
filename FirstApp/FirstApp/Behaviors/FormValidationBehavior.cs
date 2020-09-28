@@ -15,21 +15,35 @@ namespace FirstApp.Behaviors
         protected override void OnAttachedTo(Entry bindable)
         {
             bindable.TextChanged += OnEntryTextChanged;
+            bindable.Focused += OnEntryFocused;
             base.OnAttachedTo(bindable);
         }
 
         protected override void OnDetachingFrom(Entry bindable)
         {
             bindable.TextChanged -= OnEntryTextChanged;
+            bindable.Focused -= OnEntryFocused;
             base.OnDetachingFrom(bindable);
         }
 
-        protected abstract bool IsValid(TextChangedEventArgs args);
+        private void OnEntryFocused(object sender, FocusEventArgs args)
+        {
+            bool isValid = IsValid((sender as Entry).Text);
+
+            Validation(isValid, sender);
+        }
 
         protected void OnEntryTextChanged(object sender, TextChangedEventArgs args)
         {
-            bool isValid = IsValid(args);
+            bool isValid = IsValid(args.NewTextValue);
 
+            Validation(isValid, sender);
+        }
+
+        protected abstract bool IsValid(string text);
+
+        private void Validation(bool isValid, object sender)
+        {
             (sender as Entry).TextColor = isValid ? Color.Default : Color.Red;
 
             var errorLabel = (sender as Entry).FindByName<Label>(ErrorLabelName);

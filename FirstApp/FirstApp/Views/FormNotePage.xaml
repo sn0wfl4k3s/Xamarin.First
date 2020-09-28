@@ -25,10 +25,8 @@
                 </Entry.Behaviors>
             </Entry>
 
-            <Label x:Name="maxLengthTitle" IsVisible="False" />
-            <Label x:Name="notNullOrEmptyTitle" IsVisible="False" />
-
-
+            <Label x:Name="maxLengthTitle" IsVisible="False" FontSize="12" />
+            <Label x:Name="notNullOrEmptyTitle" IsVisible="False" FontSize="12"/>
 
             <Entry Text="{Binding Note.Description, Mode=TwoWay}" Placeholder="Description" >
                 <Entry.Behaviors>
@@ -40,7 +38,7 @@
                 </Entry.Behaviors>
             </Entry>
 
-            <Label x:Name="notNullOrEmptyDescrition" IsVisible="False" />
+            <Label x:Name="notNullOrEmptyDescrition" IsVisible="False" FontSize="12" />
 
             <Grid>
                 <Button
