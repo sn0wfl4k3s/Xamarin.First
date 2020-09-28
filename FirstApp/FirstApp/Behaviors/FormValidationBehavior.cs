@@ -46,14 +46,17 @@ namespace FirstApp.Behaviors
                 ErrorList.Remove(ErrorMessage);
             }
 
-            (sender as Entry)
-                .FindByName<Button>(NameButtonToDisable)
-                .IsEnabled = ErrorList.Count is 0;
-
             if (!isValid)
             {
                 errorLabel.Text = ErrorMessage;
                 errorLabel.TextColor = Color.Red;
+            }
+
+            if (!string.IsNullOrEmpty(NameButtonToDisable))
+            {
+                (sender as Entry)
+                    .FindByName<Button>(NameButtonToDisable)
+                    .IsEnabled = ErrorList.Count is 0;
             }
         }
     }
