@@ -4,7 +4,6 @@ using PropertyChanged;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Windows.Input;
 
 using Xamarin.Forms;
