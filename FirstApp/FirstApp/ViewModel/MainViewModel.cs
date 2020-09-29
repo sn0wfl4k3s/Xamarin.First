@@ -4,6 +4,7 @@ using PropertyChanged;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Windows.Input;
 
 using Xamarin.Forms;
@@ -27,14 +28,14 @@ namespace FirstApp.ViewModel
 
         void SearchCmd()
         {
+            Func<Note, bool> func = null;
+
             if (!string.IsNullOrEmpty(SearchText))
             {
-                Syncronize(n => n.Title.Contains(SearchText) || n.Description.Contains(SearchText));
-
-                return;
+                func = n => n.Title.Contains(SearchText) || n.Description.Contains(SearchText);
             }
 
-            Syncronize();
+            Syncronize(func);
         }
 
         public MainViewModel()
@@ -66,13 +67,13 @@ namespace FirstApp.ViewModel
             await Current.MainPage.Navigation.PushAsync(new FormNotePage(note), true);
         }
 
-        void Syncronize(Func<Note, bool> func = null)
+        void Syncronize(Func<Note, bool> validNote = null)
         {
             Notes.Clear();
 
             _dataStore
                .GetAllEntities()
-               .Where(func is null ? (n => true) : func)
+               .Where(validNote is null ? (n => true) : validNote)
                .ForEach(n => Notes.Add(n));
 
             IsEmptyList = Notes.Count is 0;
