@@ -13,7 +13,16 @@
                 <On Platform="UWP" Value="30,0,30,0" />
             </OnPlatform>
         </StackLayout.Padding>
-        
+
+        <SearchBar
+            Text="{Binding SearchText, Mode=TwoWay}"
+            Margin="10"
+            FontSize="15"
+            Placeholder="Buscar nota..."
+            FontAttributes="Italic"
+            SearchCommand="{Binding SearchCommand }"
+            />
+
         <Button 
             Text="Criar nova nota" 
             CornerRadius="30" 
