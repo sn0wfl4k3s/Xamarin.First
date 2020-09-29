@@ -4,7 +4,6 @@ using PropertyChanged;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Windows.Input;
 
 using Xamarin.Forms;
@@ -34,7 +33,7 @@ namespace FirstApp.ViewModel
 
                 return;
             }
-            
+
             Syncronize();
         }
 
@@ -71,10 +70,10 @@ namespace FirstApp.ViewModel
         {
             Notes.Clear();
 
-             _dataStore
-                .GetAllEntities()
-                .Where(func is null ? (n => true) : func)
-                .ForEach(n => Notes.Add(n));
+            _dataStore
+               .GetAllEntities()
+               .Where(func is null ? (n => true) : func)
+               .ForEach(n => Notes.Add(n));
 
             IsEmptyList = Notes.Count is 0;
         }
