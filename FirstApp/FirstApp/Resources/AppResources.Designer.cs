@@ -196,6 +196,24 @@ namespace FirstApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string PlaceholderDescription {
+            get {
+                return ResourceManager.GetString("PlaceholderDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        internal static string PlaceholderTitle {
+            get {
+                return ResourceManager.GetString("PlaceholderTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please fill in the note description.
         /// </summary>
         internal static string ValidationDescripNotNull {

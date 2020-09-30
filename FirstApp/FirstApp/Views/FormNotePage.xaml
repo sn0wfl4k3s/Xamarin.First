@@ -14,7 +14,9 @@
                 Margin="10,10,0,5"
                 />
 
-            <Entry Text="{Binding Note.Title, Mode=TwoWay}" Placeholder="Title">
+            <Entry 
+                Text="{Binding Note.Title, Mode=TwoWay}" 
+                Placeholder="{x:Static resx:AppResources.PlaceholderTitle}">
                 <Entry.Behaviors>
                     <local:MaxLenValidationBehavior
                         NameButtonToDisable="btnSave"
@@ -33,7 +35,9 @@
             <Label x:Name="maxLengthTitle" IsVisible="False" FontSize="12" />
             <Label x:Name="notNullOrEmptyTitle" IsVisible="False" FontSize="12"/>
 
-            <Entry Text="{Binding Note.Description, Mode=TwoWay}" Placeholder="Description" >
+            <Entry 
+                Text="{Binding Note.Description, Mode=TwoWay}" 
+                Placeholder="{x:Static resx:AppResources.PlaceholderDescription}" >
                 <Entry.Behaviors>
                     <local:NotNullOrEmptyValidationBehavior 
                         NameButtonToDisable="btnSave"

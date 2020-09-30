@@ -118,63 +118,63 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DeleteAlertMessage" xml:space="preserve">
-    <value>Are your sure?</value>
+    <value>Tem certeza que deseja excluir?</value>
   </data>
   <data name="DeleteAlertTitle" xml:space="preserve">
-    <value>Confirm deletion</value>
+    <value>Confirmar exclusão</value>
   </data>
   <data name="DeleteConfirm" xml:space="preserve">
-    <value>yes</value>
+    <value>Sim</value>
   </data>
   <data name="DeleteDeny" xml:space="preserve">
-    <value>no</value>
+    <value>Não</value>
   </data>
   <data name="FormPageButtonCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancelar</value>
   </data>
   <data name="FormPageButtonSave" xml:space="preserve">
-    <value>Save</value>
+    <value>Salvar</value>
   </data>
   <data name="FormPageLabel" xml:space="preserve">
-    <value>New Note</value>
+    <value>Nova nota</value>
   </data>
   <data name="FormPageTitle" xml:space="preserve">
-    <value>Creating Note</value>
+    <value>Criando nota</value>
   </data>
   <data name="MainPageButtonCreate" xml:space="preserve">
-    <value>Create new note</value>
+    <value>Criar nova anotação</value>
   </data>
   <data name="MainPageEmptyList" xml:space="preserve">
-    <value>No note added... :/</value>
+    <value>Nenhuma nota adicionada... :/</value>
   </data>
   <data name="MainPageLastNotes" xml:space="preserve">
-    <value>Last notes added:</value>
+    <value>Últimas notas adicionadas:</value>
   </data>
   <data name="MainPageSearch" xml:space="preserve">
-    <value>Search note...</value>
+    <value>Buscar nota...</value>
   </data>
   <data name="MainPageTitle" xml:space="preserve">
-    <value>NoteApp</value>
+    <value>Anotações</value>
   </data>
   <data name="MenuItemDelete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Excluir</value>
   </data>
   <data name="MenuItemEdit" xml:space="preserve">
-    <value>Edit</value>
+    <value>Editar</value>
   </data>
   <data name="PlaceholderDescription" xml:space="preserve">
-    <value>Description</value>
+    <value>Descrição</value>
   </data>
   <data name="PlaceholderTitle" xml:space="preserve">
-    <value>Title</value>
+    <value>Título</value>
   </data>
   <data name="ValidationDescripNotNull" xml:space="preserve">
-    <value>Please fill in the note description</value>
+    <value>Favor preencher a descrição da nota</value>
   </data>
   <data name="ValidationTitleMaxLen" xml:space="preserve">
-    <value>Maximum length is 50 characters</value>
+    <value>O tamanho máximo é de 50 caracteres</value>
   </data>
   <data name="ValidationTitleNotNull" xml:space="preserve">
-    <value>Please fill in the title</value>
+    <value>Favor preencher o título</value>
   </data>
 </root>
