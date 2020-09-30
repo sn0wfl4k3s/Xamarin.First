@@ -3,24 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:FirstApp.Behaviors"
              x:Class="FirstApp.Views.FormNotePage"
-             Title="Criar Nota">
+             xmlns:resx="clr-namespace:FirstApp.Resources"
+             Title="{x:Static resx:AppResources.FormPageTitle}">
     <ContentPage.Content>
         <StackLayout Margin="10,0,10,0">
             
-            <Label Text="Nova Anotação" FontSize="Title" Margin="10,10,0,5"/>
+            <Label 
+                Text="{x:Static resx:AppResources.FormPageLabel}" 
+                FontSize="Title" 
+                Margin="10,10,0,5"
+                />
 
             <Entry Text="{Binding Note.Title, Mode=TwoWay}" Placeholder="Title">
                 <Entry.Behaviors>
                     <local:MaxLenValidationBehavior
                         NameButtonToDisable="btnSave"
                         ErrorLabelName="maxLengthTitle"
-                        ErrorMessage="Tamanho máximo é de 50 caracteres" 
+                        ErrorMessage="{x:Static resx:AppResources.ValidationTitleMaxLen}" 
                         Length="50"
                         />
                     <local:NotNullOrEmptyValidationBehavior 
                         NameButtonToDisable="btnSave"
                         ErrorLabelName="notNullOrEmptyTitle"
-                        ErrorMessage="Por favor preencher o título"
+                        ErrorMessage="{x:Static resx:AppResources.ValidationTitleNotNull}"
                         />
                 </Entry.Behaviors>
             </Entry>
@@ -33,7 +38,7 @@
                     <local:NotNullOrEmptyValidationBehavior 
                         NameButtonToDisable="btnSave"
                         ErrorLabelName="notNullOrEmptyDescrition"
-                        ErrorMessage="Por favor preencher a descrição da nota" 
+                        ErrorMessage="{x:Static resx:AppResources.ValidationDescripNotNull}" 
                         />
                 </Entry.Behaviors>
             </Entry>
@@ -43,8 +48,8 @@
             <Grid>
                 <Button
                     Grid.Column="0"
+                    Text="{x:Static resx:AppResources.FormPageButtonCancel}"
                     x:Name="btnCancel"
-                    Text="Cancelar"
                     Command="{Binding CancelCommand}" 
                     Margin="0,35,0,5" 
                     CornerRadius="20" 
@@ -53,8 +58,8 @@
                     />
                 <Button
                     Grid.Column="1"
+                    Text="{x:Static resx:AppResources.FormPageButtonSave}"
                     x:Name="btnSave"
-                    Text="Salvar"
                     Command="{Binding SaveNoteCommand}" 
                     Margin="0,35,0,5" 
                     CornerRadius="20" 

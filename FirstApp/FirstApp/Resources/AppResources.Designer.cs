@@ -59,5 +59,167 @@ namespace FirstApp.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are your sure?.
+        /// </summary>
+        internal static string DeleteAlertMessage {
+            get {
+                return ResourceManager.GetString("DeleteAlertMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm deletion.
+        /// </summary>
+        internal static string DeleteAlertTitle {
+            get {
+                return ResourceManager.GetString("DeleteAlertTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to yes.
+        /// </summary>
+        internal static string DeleteConfirm {
+            get {
+                return ResourceManager.GetString("DeleteConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to no.
+        /// </summary>
+        internal static string DeleteDeny {
+            get {
+                return ResourceManager.GetString("DeleteDeny", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string FormPageButtonCancel {
+            get {
+                return ResourceManager.GetString("FormPageButtonCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string FormPageButtonSave {
+            get {
+                return ResourceManager.GetString("FormPageButtonSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Note.
+        /// </summary>
+        internal static string FormPageLabel {
+            get {
+                return ResourceManager.GetString("FormPageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creating Note.
+        /// </summary>
+        internal static string FormPageTitle {
+            get {
+                return ResourceManager.GetString("FormPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create new note.
+        /// </summary>
+        internal static string MainPageButtonCreate {
+            get {
+                return ResourceManager.GetString("MainPageButtonCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No note added... :/.
+        /// </summary>
+        internal static string MainPageEmptyList {
+            get {
+                return ResourceManager.GetString("MainPageEmptyList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last notes added:.
+        /// </summary>
+        internal static string MainPageLastNotes {
+            get {
+                return ResourceManager.GetString("MainPageLastNotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search note....
+        /// </summary>
+        internal static string MainPageSearch {
+            get {
+                return ResourceManager.GetString("MainPageSearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NoteApp.
+        /// </summary>
+        internal static string MainPageTitle {
+            get {
+                return ResourceManager.GetString("MainPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string MenuItemDelete {
+            get {
+                return ResourceManager.GetString("MenuItemDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string MenuItemEdit {
+            get {
+                return ResourceManager.GetString("MenuItemEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill in the note description.
+        /// </summary>
+        internal static string ValidationDescripNotNull {
+            get {
+                return ResourceManager.GetString("ValidationDescripNotNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maximum length is 50 characters.
+        /// </summary>
+        internal static string ValidationTitleMaxLen {
+            get {
+                return ResourceManager.GetString("ValidationTitleMaxLen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill in the title.
+        /// </summary>
+        internal static string ValidationTitleNotNull {
+            get {
+                return ResourceManager.GetString("ValidationTitleNotNull", resourceCulture);
+            }
+        }
     }
 }
