@@ -142,13 +142,13 @@
     <value>Criando nota</value>
   </data>
   <data name="MainPageButtonCreate" xml:space="preserve">
-    <value>Criar nova anotação</value>
+    <value>Criar anotação</value>
   </data>
   <data name="MainPageEmptyList" xml:space="preserve">
     <value>Nenhuma nota adicionada... :/</value>
   </data>
   <data name="MainPageLastNotes" xml:space="preserve">
-    <value>Últimas notas adicionadas:</value>
+    <value>Últimas notas:</value>
   </data>
   <data name="MainPageSearch" xml:space="preserve">
     <value>Buscar nota...</value>
