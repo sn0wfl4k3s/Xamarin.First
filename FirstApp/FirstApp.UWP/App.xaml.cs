@@ -1,6 +1,8 @@
 ﻿using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Foundation;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -66,7 +68,19 @@ namespace FirstApp.UWP
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
             // Ensure the current window is active
+
+            //Window.Current.Activate();
+            float DPI = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().LogicalDpi;
+
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
+            var desiredSize = new Size(((float)500 * 96.0f / DPI), ((float)600 * 96.0f / DPI));
+
+            ApplicationView.PreferredLaunchViewSize = desiredSize;
+
             Window.Current.Activate();
+
+            bool result = ApplicationView.GetForCurrentView().TryResizeView(desiredSize);
         }
 
         /// <summary>

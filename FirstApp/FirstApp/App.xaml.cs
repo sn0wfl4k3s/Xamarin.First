@@ -1,7 +1,9 @@
 ﻿using FirstApp.Contracts;
 using FirstApp.Models;
+using FirstApp.Resources;
 using FirstApp.Services;
 using FirstApp.Views;
+
 using Xamarin.Forms;
 
 namespace FirstApp
@@ -13,6 +15,8 @@ namespace FirstApp
             InitializeComponent();
 
             DependencyService.Register<IDataStore<Note>, NoteService>();
+
+            AppResources.Culture = System.Threading.Thread.CurrentThread.CurrentCulture;
 
             MainPage = new NavigationPage(new MainPage());
         }

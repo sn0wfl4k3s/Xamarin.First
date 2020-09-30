@@ -1,4 +1,5 @@
 ﻿using FirstApp.Models;
+using FirstApp.Resources;
 using FirstApp.Views;
 using PropertyChanged;
 using System;
@@ -44,8 +45,11 @@ namespace FirstApp.ViewModel
 
         async void DeleteNoteCmd(Note note)
         {
-            bool isToDelet = await Current.MainPage
-                .DisplayAlert("Confirmar exclusão", "Tem certeza que deseja excluir a nota?", "Sim", "Não");
+            bool isToDelet = await Current.MainPage.DisplayAlert(
+                    AppResources.DeleteAlertTitle, 
+                    AppResources.DeleteAlertMessage, 
+                    AppResources.DeleteConfirm,
+                    AppResources.DeleteDeny);
 
             if (isToDelet)
             {
