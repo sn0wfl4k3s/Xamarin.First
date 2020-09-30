@@ -53,7 +53,6 @@
 
             <Grid>
                 <Button
-                    Grid.Column="0"
                     Text="{x:Static resx:AppResources.FormPageButtonCancel}"
                     x:Name="btnCancel"
                     Command="{Binding CancelCommand}" 
