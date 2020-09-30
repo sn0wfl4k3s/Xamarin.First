@@ -6,7 +6,9 @@
              xmlns:resx="clr-namespace:FirstApp.Resources"
              Title="{x:Static resx:AppResources.FormPageTitle}">
     <ContentPage.Content>
-        <StackLayout Margin="10,0,10,0">
+        <StackLayout 
+            Margin="10,0,10,0"
+            CompressedLayout.IsHeadless="true">
             
             <Label 
                 Text="{x:Static resx:AppResources.FormPageLabel}" 

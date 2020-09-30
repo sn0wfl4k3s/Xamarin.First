@@ -7,7 +7,9 @@
              x:Name="this"
              Title="{x:Static resx:AppResources.MainPageTitle}">
 
-    <StackLayout Orientation="Vertical">
+    <StackLayout 
+        Orientation="Vertical" 
+        CompressedLayout.IsHeadless="true">
 
         <StackLayout.Padding>
             <OnPlatform x:TypeArguments="Thickness">
