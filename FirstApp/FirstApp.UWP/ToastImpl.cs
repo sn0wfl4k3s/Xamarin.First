@@ -18,7 +18,10 @@ namespace FirstApp.UWP
             toastTextElements[0].AppendChild(toastXml.CreateTextNode(message));
 
             XmlNodeList toastImageAttributes = toastXml.GetElementsByTagName("image");
-            ((XmlElement)toastImageAttributes[0]).SetAttribute("src", "ms-appx:///Assets/Logo.scale-240.png");
+            
+            string icon = "Square44x44Logo.targetsize-256.png";
+
+            ((XmlElement)toastImageAttributes[0]).SetAttribute("src", $"ms-appx:///Assets/{icon}");
             ((XmlElement)toastImageAttributes[0]).SetAttribute("alt", "logo");
 
             IXmlNode toastNode = toastXml.SelectSingleNode("/toast");
