@@ -1,4 +1,5 @@
-﻿using FirstApp.Models;
+﻿using FirstApp.Contracts;
+using FirstApp.Models;
 using PropertyChanged;
 using System.Windows.Input;
 
@@ -37,6 +38,8 @@ namespace FirstApp.ViewModel
             {
                 _dataStore.AddEntity(Note);
             }
+
+            Toast("Nota adicionada com sucesso!");
 
             BackToMainPage();
         }
